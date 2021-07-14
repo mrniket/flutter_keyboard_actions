@@ -178,14 +178,14 @@ class KeyboardActionstate extends State<KeyboardActions>
       }
     });
     //if it is a custom keyboard then wait until the focus was dismissed from the others
-    if (_currentAction!.footerBuilder != null) {
-      await Future.delayed(
-        Duration(milliseconds: _timeToDismiss.inMilliseconds),
-      );
-    }
+    // if (_currentAction!.footerBuilder != null) {
+    //   await Future.delayed(
+    //     Duration(milliseconds: _timeToDismiss.inMilliseconds),
+    //   );
+    // }
 
     FocusScope.of(context).requestFocus(_currentAction!.focusNode);
-    await Future.delayed(const Duration(milliseconds: 100));
+    // await Future.delayed(const Duration(milliseconds: 100));
     bottomAreaAvoiderKey.currentState?.scrollToOverscroll();
   }
 
